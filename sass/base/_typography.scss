@@ -6,19 +6,24 @@
     font-style: normal;
 }
 
-@font-face 
-{
-    font-family: 'roboto';
-    src: url('/public/font/RobotoSlab-Regular.ttf');
-    font-weight: normal;
-    font-style: normal;
+*{
+    font-family: 'Roboto', sans-serif;
 }
 
 h1{
     font-family: 'shrikhand';
+    font-size: 2rem;
+    font-weight: 200;
 }
 
+h2{
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
 
-p{
-    font-family: 'Roboto' sans-serif;
+em{
+    font-style: normal;
+    font-weight: bold;
 }

@@ -1,8 +1,10 @@
-$colour-primary: #9356DC;
-$colour-secondary: #FF79DA;
-$colour-tertiary: #99E2D0;
+$color-primary: #9356dc;
+$color-secondary: #ff79da;
+$color-tertiary: #99E2D0;
 
-$colour-primaryBackground: #C8C8C8;
-$colour-secondaryBackground: #FFFFFF;
-$colour-tertiaryBackground:darken($colour-primaryBackground, 10%);
-$colour-footerBackground: darken($colour-primaryBackground, 80%);;
+$color-primaryBackground: #f0f0f0;
+$color-secondaryBackground: #FFFFFF;
+$color-tertiaryBackground:darken($color-primaryBackground, 5%);
+$color-footerBackground: darken($color-primaryBackground, 80%);;
+
+$color-greyText: darken($color-primaryBackground, 50%)

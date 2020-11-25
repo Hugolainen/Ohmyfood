@@ -3,35 +3,36 @@
     <head> 
         <meta charset="utf-8" />
         <title> Ohmyfood - Home page </title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,900i" rel="stylesheet">
         <meta name="viewport" content="width=device-width" />
         <link rel="stylesheet" href="/css/style.css" type="text/css">
         <script src="https://kit.fontawesome.com/6fcdcaea13.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
-        <header>
-            <span> <img src="/public/img/logo/ohmyfood.png" alt="Logo"/> </span>
+        <header class="header">
+            <h1 class="header__logo"> ohmyfood </h1>
         </header>
 
-        <section>
-            <div>
+        <section class="introduction">
+            <div class="introduction__localisation">
                 <i class="fas fa-map-marker-alt"></i>
                 <p> <em> Paris, Belleville </em> </p>
             </div>
-            <nav>
-                <h1> Book the menu you like </h1>
+            <div class="introduction__content">
+                <h2> Book the menu you like </h2>
                 <p> Discover top-of-the-art restaurants we picked for you </p>
-                <button> Explore our restaurants </button>
-            </nav>
+                <button class="button"> Explore our restaurants </button>
+            </div>
         </section>
         
-        <section>
+        <section class="tutorial">
             <h2> How it works </h2>
-            <ul>
+            <ul class="tutorial__list">
                 <li>
                     <span> 1 </span>
                     <i class="fas fa-mobile-alt"></i>
-                    Choose a restaurant
+                    Chose a restaurant
                 </li>
 
                 <li>
@@ -48,15 +49,16 @@
             </ul>
         </section>
 
-        <section>
+        <section class="restaurantBox">
             <h2> Restaurants </h2>
-            <ul>
+            <ul = class="restaurantBox__List">
                 <li>
-                    <span> <img src="/public/img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Restaurant: The Full Palette"/> </span>
+                    <img src="/public/img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Restaurant: The Full Palette"/>
                     <div> New </div>
+                    <i class="fas fa-heart"></i>
                     <h3> The Full Palette </h3>
                     <p> New York </p>
-                    <i class="fas fa-heart"></i>
+                    
                 </li>
 
                 <li>

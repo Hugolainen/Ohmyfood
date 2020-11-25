@@ -1,0 +1,15 @@
+.header{
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    /* background-color: $colour-secondaryBackground; */
+    &__logo {
+        padding: 0.5rem;
+    }
+    &__goBackButton{
+        float: left;
+    }
+}
