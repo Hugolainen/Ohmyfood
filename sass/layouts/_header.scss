@@ -9,7 +9,12 @@
     &__logo {
         padding: 0.5rem;
     }
-    &__goBackButton{
-        float: left;
+
+    & i{
+        align-self: center;
+        position: absolute;
+        top: 0.8rem;
+        left: 1rem;
+        font-size: 1.5rem;
     }
 }

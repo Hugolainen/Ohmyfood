@@ -69,8 +69,12 @@ a {
 .header__logo {
   padding: 0.5rem;
 }
-.header__goBackButton {
-  float: left;
+.header i {
+  align-self: center;
+  position: absolute;
+  top: 0.8rem;
+  left: 1rem;
+  font-size: 1.5rem;
 }
 
 .footer {
@@ -215,6 +219,94 @@ a {
   color: #ff79da;
   font-size: 1.8rem;
   margin: 0.5rem 0.8rem 0 0;
+}
+
+.menuPageBody {
+  background-color: #f0f0f0;
+}
+
+.restaurantDesc {
+  height: 20rem;
+  max-height: 20rem;
+}
+.restaurantDesc img {
+  --imageHeight: calc(100% - 4rem);
+  height: var(--imageHeight);
+  width: 100%;
+  object-fit: cover;
+}
+.restaurantDesc__title {
+  position: relative;
+  bottom: 2rem;
+  line-height: 4rem;
+  padding: 0.5rem 1.5rem;
+  background-color: #f0f0f0;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+.restaurantDesc__title i {
+  font-size: 2rem;
+  color: #9356dc;
+  margin: 0.8rem;
+  float: right;
+}
+
+.menu {
+  margin-top: -1rem;
+  padding-bottom: 1rem;
+}
+.menu__part {
+  list-style: none;
+}
+.menu__part__title {
+  font-size: 1.2rem;
+  font-weight: normal;
+  display: inline-block;
+  padding-bottom: 5px;
+  position: relative;
+  margin-bottom: 0.2rem;
+  margin-top: 1.5rem;
+}
+.menu__part__title:before {
+  content: "";
+  position: absolute;
+  width: 3rem;
+  bottom: 0;
+  border-bottom: 3px solid #99E2D0;
+}
+.menu__part__list {
+  list-style: none;
+  margin: 0 1rem;
+}
+.menu__part__list li {
+  background-color: #FFFFFF;
+  margin: 0.5rem 0;
+  border-radius: 1rem;
+  box-shadow: 1px 1px 2px 1px #e3e3e3;
+  padding: 0.7rem;
+}
+.menu__part__list li h3 {
+  font-size: 1rem;
+}
+.menu__part__list li p {
+  margin-top: 0.2rem;
+  font-size: 0.8rem;
+  max-width: 85%;
+}
+.menu__part__list li span {
+  float: right;
+  margin-right: 0.5rem;
+  margin-top: -0.9rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+.menu__button {
+  padding: 2rem 0 3rem 0;
+  text-align: center;
+}
+.menu__button .button {
+  padding: 0 3rem;
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */
