@@ -39,18 +39,19 @@
     }
 }
 
-
 .tutorial{
     background-color: $color-secondaryBackground;
 
     &__list{
         list-style: none;
         margin-left: 0.5rem;
+
         & li{
             margin: 1rem;
             line-height: 4rem;
             background-color: $color-primaryBackground;
             border-radius: 1rem;
+            font-size: 0.95rem;
             font-weight: bold;
 
             box-shadow: 1px 1px 6px 1px rgba(200,200,200,1);
@@ -59,13 +60,14 @@
                 background-color: $color-primary;
                 color: white;
 
-                padding: 0.3rem;
+                padding: 0.3rem 0.4rem;
+                padding-left: 0.5rem;
                 border-radius: 50%;
 
                 min-height: 1.5rem;
                 min-width: 1.5rem;
 
-                margin-left: -0.5rem;
+                margin-left: -0.7rem;
                 font-size: 0.8rem;
                 font-weight: 0;
             }
@@ -73,7 +75,7 @@
             & i{
                 color: $color-greyText;
                 font-size: 1.2rem;
-                margin: 0 1rem;
+                margin: 0 0.7rem;
             }
         }
 
@@ -83,16 +85,17 @@
 
 .restaurantBox{
     background-color: $color-primaryBackground;
-    padding: 2rem 0;
+    padding: 3rem 0;
+    margin-top: 2rem;
 
-    &__List{
+    &__list{
         margin: 0 1rem;
         list-style: none;
         & li{
             height: 15rem;
             border-radius: 1rem;
             background-color: $color-secondaryBackground;
-            margin: 1rem 0;
+            margin: 1rem 0 1rem 0;
 
             & img{
                 --imgHeight: calc(100% - 4rem);
@@ -103,27 +106,36 @@
                 border-top-right-radius: 1rem;
 
                 object-fit: cover;
+
+                &.--withNewIcon{
+                    margin-top: -1.8rem;
+                }
             }
+        }
+
+        &__newIcon{
+            background-color: $color-tertiary;
+            color: darken($color-tertiary, 40%);
+            font-weight: bold;
+            line-height: 1.8rem;
+            text-align: center;
+            width: 4.5rem;
+            border-radius: 0.2rem;
+
+            position: relative;
+            --newIconLeftMove: calc(100% - 5.5rem);
+            left: var(--newIconLeftMove);
+            top: 1rem;
+        }
+
+        &__info{
+            padding: 0.5rem 1rem;
 
             & i{
                 float: right;
                 color: $color-secondary;
-                font-size: 1.5rem;
-                margin-right: 1.5rem;
-            }
-
-            & div{
-                background-color: $color-tertiary;
-                color: darken($color-tertiary, 40%);
-                font-weight: bold;
-                line-height: 1.8rem;
-                text-align: center;
-                width: 4.5rem;
-                border-radius: 0.2rem;
-
-                position: absolute;;
-                left: 16.5rem;
-                bottom: 1.5rem;
+                font-size: 1.8rem;
+                margin: 0.5rem 0.8rem 0 0;
             }
         }
     }

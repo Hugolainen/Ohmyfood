@@ -1,0 +1,34 @@
+.footer{
+    background-color: $color-footerBackground;
+    padding: 1rem;
+    color: white;
+
+    &__logo{
+        font-size: 1.2rem;
+    }
+
+    &__nav{
+        list-style: none;
+
+        & li{
+            margin: 0.5rem 0;
+            text-decoration: none;
+
+            & i{
+                font-size: 0.8rem;
+                margin-right: 0.3rem;
+            }
+
+            & a{
+                color: white;
+            }
+            
+            & a:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+
+

@@ -22,7 +22,7 @@
             <div class="introduction__content">
                 <h2> Book the menu you like </h2>
                 <p> Discover top-of-the-art restaurants we picked for you </p>
-                <button class="button"> Explore our restaurants </button>
+                <div class="button"> <a href="#"> Explore our restaurants </a> </div>
             </div>
         </section>
         
@@ -30,7 +30,7 @@
             <h2> How it works </h2>
             <ul class="tutorial__list">
                 <li>
-                    <span> 1 </span>
+                    <span class="tutorial__list__number"> 1 </span>
                     <i class="fas fa-mobile-alt"></i>
                     Chose a restaurant
                 </li>
@@ -51,44 +51,51 @@
 
         <section class="restaurantBox">
             <h2> Restaurants </h2>
-            <ul = class="restaurantBox__List">
+            <ul = class="restaurantBox__list">
                 <li>
-                    <img src="/public/img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Restaurant: The Full Palette"/>
-                    <div> New </div>
-                    <i class="fas fa-heart"></i>
-                    <h3> The Full Palette </h3>
-                    <p> New York </p>
-                    
+                    <div class="restaurantBox__list__newIcon"> New </div>
+                    <img class="--withNewIcon" src="/public/img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Restaurant: The Full Palette"/>
+                    <div class="restaurantBox__list__info">
+                        <i class="fas fa-heart"></i>
+                        <h3> The Full Palette </h3>
+                        <p> New York </p>                        
+                    </div>
                 </li>
 
                 <li>
-                    <span> <img src="/public/img/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="Restaurant: The Enchanted Plate"/> </span>
-                    <div> New </div>
-                    <h3> The Enchanted Plate </h3>
-                    <p> New York </p>
-                    <i class="fas fa-heart"></i>
+                    <div class="restaurantBox__list__newIcon"> New </div>
+                    <img class="--withNewIcon" src="/public/img/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="Restaurant: The Enchanted Plate"/>
+                    <div class="restaurantBox__list__info">
+                        <i class="fas fa-heart"></i>     
+                        <h3> The Enchanted Plate </h3>
+                        <p> New York </p>                   
+                    </div>
                 </li>
 
                 <li>
-                    <span> <img src="/public/img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="Restaurant: Bastille"/> </span>
-                    <h3> Bastille </h3>
-                    <p> New York </p>
-                    <i class="fas fa-heart"></i>
+                    <img src="/public/img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="Restaurant: Bastille"/>
+                    <div class="restaurantBox__list__info">
+                        <i class="fas fa-heart"></i>  
+                        <h3> Bastille </h3>
+                        <p> New York </p>                      
+                    </div>
                 </li>
 
                 <li>
-                    <span> <img src="/public/img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Restaurant: Le Gourmand"/> </span>
-                    <h3> Le Gourmand </h3>
-                    <p> New York </p>
-                    <i class="fas fa-heart"></i>
+                    <img src="/public/img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Restaurant: Le Gourmand"/>
+                    <div class="restaurantBox__list__info">
+                        <i class="fas fa-heart"></i>     
+                        <h3> Le Gourmand </h3>
+                        <p> New York </p>                   
+                    </div>
                 </li>
             </ul>
         </section>
 
-        <footer>
-            <span> <img src="/public/img/logo/ohmyfood.png" alt="Logo"/> </span>
+        <footer class="footer">
+            <h1 class="footer__logo"> ohmyfood </h1>
             <nav>
-                <ul>
+                <ul class="footer__nav">
                     <li>
                         <i class="fas fa-utensils"></i>
                         <a href="#"> Suggest a restaurant  </a>             
