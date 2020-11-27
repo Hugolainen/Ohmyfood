@@ -1,0 +1,118 @@
+.menuPageBody{
+    background-color: $color-primaryBackground;
+}
+
+.restaurantDesc{
+
+    height: 20rem;
+    max-height: 20rem;
+    
+    & img{
+        --imageHeight: calc(100% - 4rem);
+        height: var(--imageHeight);
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__title{
+        position: relative;
+        bottom: 2rem;
+        
+
+        line-height: 4rem;
+        padding: 0.5rem 1.5rem;
+        background-color: $color-primaryBackground;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+
+        & i{
+            font-size: 2rem;
+            color: $color-primary;
+            margin: 0.8rem;
+            float: right;
+        }
+    }
+}
+
+.menu{
+    margin-top: -1rem;
+    padding-bottom: 1rem;;
+
+    &__part{
+        list-style: none;
+
+        &--anim1{
+            animation: puff-in-top 0.4s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+        }
+
+        &--anim2{
+            animation: puff-in-top 0.4s 0.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+        }
+
+        &--anim3{
+            animation: puff-in-top 0.4s 0.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+        }
+
+        &__title{
+            font-size: 1.2rem;
+            font-weight: normal;
+            display: inline-block;
+            padding-bottom: 5px;
+            position: relative;
+            margin-bottom: 0.2rem;
+            margin-top: 1.5rem;
+
+            &:before{
+                content: "";
+                position: absolute;
+                width: 3rem;
+                bottom: 0;
+                border-bottom: 3px solid $color-tertiary;
+            }
+        }
+
+        &__list{
+            list-style: none;
+            margin: 0 1rem;
+
+            & li{
+                background-color: $color-secondaryBackground;
+                margin: 0.5rem 0;
+                border-radius: 1rem;
+                box-shadow: 1px 1px 2px 1px $color-tertiaryBackground;
+
+                padding: 0.7rem;
+
+                & h3{
+                    font-size: 1rem;
+                }
+
+                & p{
+                    margin-top: 0.2rem;
+                    font-size: 0.8rem;
+                    max-width: 85%;
+                }
+
+                & span{
+                    float: right;
+                    margin-right: 0.5rem;
+                    margin-top: -0.9rem;
+                    font-size: 0.9rem;
+                    font-weight: bold;
+
+                }
+            }
+        }
+    } 
+    
+    &__button{
+        padding: 2rem 0 3rem 0;
+        text-align: center;
+
+        & .button{
+            padding: 0 3rem;
+            color: white;
+        }
+    }
+}
+
