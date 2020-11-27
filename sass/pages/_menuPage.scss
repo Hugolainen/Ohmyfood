@@ -41,6 +41,18 @@
     &__part{
         list-style: none;
 
+        &--anim1{
+            animation: puff-in-top 0.4s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+        }
+
+        &--anim2{
+            animation: puff-in-top 0.4s 0.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+        }
+
+        &--anim3{
+            animation: puff-in-top 0.4s 0.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+        }
+
         &__title{
             font-size: 1.2rem;
             font-weight: normal;
