@@ -1,0 +1,21 @@
+.heart{
+    display: grid;
+    float: right;
+
+    &:hover > .heart__fill{
+        transform: scale(1);
+    }
+
+    &__fill{
+        grid-column: 1;
+        grid-row: 1;
+
+        transform: scale(0);
+        transition: transform 500ms;
+    }
+
+    &__border{
+        grid-column: 1;
+        grid-row: 1;
+    }
+}

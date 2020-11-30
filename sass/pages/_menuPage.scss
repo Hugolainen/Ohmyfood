@@ -1,9 +1,4 @@
-.menuPageBody{
-    background-color: $color-primaryBackground;
-}
-
 .restaurantDesc{
-
     height: 20rem;
     max-height: 20rem;
     
@@ -29,12 +24,12 @@
             font-size: 2rem;
             color: $color-primary;
             margin: 0.8rem;
-            float: right;
         }
     }
 }
 
 .menu{
+    background-color: $color-primaryBackground;
     margin-top: -1rem;
     padding-bottom: 1rem;;
 
@@ -74,34 +69,6 @@
         &__list{
             list-style: none;
             margin: 0 1rem;
-
-            & li{
-                background-color: $color-secondaryBackground;
-                margin: 0.5rem 0;
-                border-radius: 1rem;
-                box-shadow: 1px 1px 2px 1px $color-tertiaryBackground;
-
-                padding: 0.7rem;
-
-                & h3{
-                    font-size: 1rem;
-                }
-
-                & p{
-                    margin-top: 0.2rem;
-                    font-size: 0.8rem;
-                    max-width: 85%;
-                }
-
-                & span{
-                    float: right;
-                    margin-right: 0.5rem;
-                    margin-top: -0.9rem;
-                    font-size: 0.9rem;
-                    font-weight: bold;
-
-                }
-            }
         }
     } 
     
@@ -116,3 +83,78 @@
     }
 }
 
+.meal{
+    background-color: $color-secondaryBackground;
+    margin: 0.5rem 0;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 2px 1px $color-tertiaryBackground;
+
+    display: flex;
+    justify-content: space-between;
+
+    &__desc{
+        padding: 0.7rem;
+        min-width: 100%;
+        & h3{
+            font-size: 1rem;
+            text-overflow: ellipsis;
+            overflow: hidden; 
+            white-space: nowrap;
+        }
+    
+        & p{
+            margin-top: 0.2rem;
+            font-size: 0.8rem;
+            max-width: 85%;
+    
+            text-overflow: ellipsis;
+            overflow: hidden; 
+            white-space: nowrap;
+        }
+    
+        & span{
+            float: right;
+            margin-right: 0.5rem;
+            margin-top: -0.9rem;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+    }
+
+    &__tick{
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform ease-in-out 0.4s;
+        
+        width: 3.5rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-color: $color-tertiary;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    
+        & i{
+            display: none;
+            font-size: 1.5rem;
+            color: $color-secondaryBackground; 
+        }
+    }
+
+    &:hover > .meal__tick{
+        transform: scaleX(1);
+        
+        & i{
+            display: initial;
+            animation: rolling 0.8s;
+        }
+    }
+
+    &:hover > .meal__desc{
+        --newWidth: calc(100% - 3.5rem);
+        min-width: var(--newWidth);
+        max-width: var(--newWidth);
+    }
+}
