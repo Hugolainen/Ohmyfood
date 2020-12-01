@@ -11,6 +11,7 @@
     }
 
     & i{
+        cursor: pointer;
         position: absolute;
         top: 0.8rem;
         --leftDec: calc(50% - 200px);

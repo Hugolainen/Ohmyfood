@@ -1,6 +1,7 @@
 .heart{
     display: grid;
     float: right;
+    cursor: pointer;
 
     &:hover > .heart__fill{
         transform: scale(1);
