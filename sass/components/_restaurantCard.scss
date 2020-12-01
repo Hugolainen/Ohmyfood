@@ -1,0 +1,77 @@
+.restaurantBox{
+    background-color: $color-primaryBackground;
+    padding: 3rem 0;
+    margin-top: 2rem;
+    
+    &__loader{
+        position: absolute;
+        top: 50rem;
+        left: 30%;
+        border: 1rem solid $color-tertiary; 
+        border-top: 1rem solid $color-primary; 
+        border-radius: 50%;
+        width: 40vw;
+        height: 40vw;
+        animation: loaderSpin 0.8s ease-in-out 3;
+    }
+
+    &__list{
+        margin: 0 1rem;
+        list-style: none;
+
+        & li{
+            height: 15rem;
+            border-radius: 1rem;
+            background-color: $color-secondaryBackground;
+            margin: 1rem 0 1rem 0;
+
+            cursor: pointer;
+            
+            animation: menuAppearence 0.4s 2s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+
+            & a{
+                color: black;
+            }
+
+            & img{
+                --imgHeight: calc(100% - 4rem);
+                max-height: var(--imgHeight);
+                width: auto;
+                min-width: 100%;
+                border-top-left-radius: 1rem;
+                border-top-right-radius: 1rem;
+
+                object-fit: cover;
+
+                &.--withNewIcon{
+                    margin-top: -1.8rem;
+                }
+            }
+        }
+
+        &__newIcon{
+            background-color: $color-tertiary;
+            color: darken($color-tertiary, 40%);
+            font-weight: bold;
+            line-height: 1.8rem;
+            text-align: center;
+            width: 4.5rem;
+            border-radius: 0.2rem;
+
+            position: relative;
+            --newIconLeftMove: calc(100% - 5.5rem);
+            left: var(--newIconLeftMove);
+            top: 1rem;
+        }
+
+        &__info{
+            padding: 0.5rem 1rem;
+
+            & i{
+                float: right;
+                font-size: 1.8rem;
+                margin: 0.5rem 0.8rem 0 0;
+            }
+        }
+    }
+}

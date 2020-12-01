@@ -13,10 +13,12 @@
 
         transform: scale(0);
         transition: transform 500ms;
+        color: $color-primary;
     }
 
     &__border{
         grid-column: 1;
         grid-row: 1;
+        color: grey;
     }
 }

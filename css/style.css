@@ -26,6 +26,24 @@
     background-image: linear-gradient(#bc95e9, #a16be0);
   }
 }
+@keyframes tutorialHovering {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    background-color: #f0f0f0;
+  }
+  100% {
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.35);
+    background-color: #f2eafb;
+  }
+}
+@keyframes loaderSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 *,
 *::after,
 *::before {
@@ -91,6 +109,135 @@ a {
   color: white;
 }
 
+.restaurantBox {
+  background-color: #f0f0f0;
+  padding: 3rem 0;
+  margin-top: 2rem;
+}
+.restaurantBox__loader {
+  position: absolute;
+  top: 50rem;
+  left: 30%;
+  border: 1rem solid #99E2D0;
+  border-top: 1rem solid #9356dc;
+  border-radius: 50%;
+  width: 40vw;
+  height: 40vw;
+  animation: loaderSpin 0.8s ease-in-out 3;
+}
+.restaurantBox__list {
+  margin: 0 1rem;
+  list-style: none;
+}
+.restaurantBox__list li {
+  height: 15rem;
+  border-radius: 1rem;
+  background-color: #FFFFFF;
+  margin: 1rem 0 1rem 0;
+  cursor: pointer;
+  animation: menuAppearence 0.4s 2s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+}
+.restaurantBox__list li a {
+  color: black;
+}
+.restaurantBox__list li img {
+  --imgHeight: calc(100% - 4rem);
+  max-height: var(--imgHeight);
+  width: auto;
+  min-width: 100%;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  object-fit: cover;
+}
+.restaurantBox__list li img.--withNewIcon {
+  margin-top: -1.8rem;
+}
+.restaurantBox__list__newIcon {
+  background-color: #99E2D0;
+  color: #278870;
+  font-weight: bold;
+  line-height: 1.8rem;
+  text-align: center;
+  width: 4.5rem;
+  border-radius: 0.2rem;
+  position: relative;
+  --newIconLeftMove: calc(100% - 5.5rem);
+  left: var(--newIconLeftMove);
+  top: 1rem;
+}
+.restaurantBox__list__info {
+  padding: 0.5rem 1rem;
+}
+.restaurantBox__list__info i {
+  float: right;
+  font-size: 1.8rem;
+  margin: 0.5rem 0.8rem 0 0;
+}
+
+.meal {
+  background-color: #FFFFFF;
+  margin: 0.5rem 0;
+  border-radius: 1rem;
+  box-shadow: 1px 1px 2px 1px #e3e3e3;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.meal__desc {
+  padding: 0.7rem;
+  min-width: 100%;
+}
+.meal__desc h3 {
+  font-size: 1rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.meal__desc p {
+  margin-top: 0.2rem;
+  font-size: 0.8rem;
+  max-width: 85%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.meal__desc span {
+  float: right;
+  margin-right: 0.5rem;
+  margin-top: -0.9rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+.meal__tick {
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform ease-in-out 0.4s;
+  width: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #99E2D0;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+.meal__tick i {
+  display: none;
+  font-size: 1.5rem;
+  color: #FFFFFF;
+}
+.meal:hover > .meal__tick {
+  transform: scaleX(1);
+}
+.meal:hover > .meal__tick i {
+  display: initial;
+  animation: rolling 0.8s;
+}
+.meal:hover > .meal__desc {
+  --newWidth: calc(100% - 3.5rem);
+  min-width: var(--newWidth);
+  max-width: var(--newWidth);
+}
+
 .heart {
   display: grid;
   float: right;
@@ -104,10 +251,12 @@ a {
   grid-row: 1;
   transform: scale(0);
   transition: transform 500ms;
+  color: #9356dc;
 }
 .heart__border {
   grid-column: 1;
   grid-row: 1;
+  color: grey;
 }
 
 .header {
@@ -120,6 +269,9 @@ a {
 }
 .header__logo {
   padding: 0.5rem;
+}
+.header a {
+  color: black;
 }
 .header i {
   cursor: pointer;
@@ -210,7 +362,10 @@ a {
   border-radius: 1rem;
   font-size: 0.95rem;
   font-weight: bold;
-  box-shadow: 1px 1px 6px 1px #c8c8c8;
+  box-shadow: 1px 1px 2px 1px #c8c8c8;
+}
+.tutorial__list li:hover {
+  animation: tutorialHovering 0.2s ease-in both;
 }
 .tutorial__list li span {
   background-color: #9356dc;
@@ -228,57 +383,6 @@ a {
   color: #717171;
   font-size: 1.2rem;
   margin: 0 0.7rem;
-}
-
-.restaurantBox {
-  background-color: #f0f0f0;
-  padding: 3rem 0;
-  margin-top: 2rem;
-}
-.restaurantBox__list {
-  margin: 0 1rem;
-  list-style: none;
-}
-.restaurantBox__list li {
-  height: 15rem;
-  border-radius: 1rem;
-  background-color: #FFFFFF;
-  margin: 1rem 0 1rem 0;
-  cursor: pointer;
-}
-.restaurantBox__list li img {
-  --imgHeight: calc(100% - 4rem);
-  max-height: var(--imgHeight);
-  width: auto;
-  min-width: 100%;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-  object-fit: cover;
-}
-.restaurantBox__list li img.--withNewIcon {
-  margin-top: -1.8rem;
-}
-.restaurantBox__list__newIcon {
-  background-color: #99E2D0;
-  color: #278870;
-  font-weight: bold;
-  line-height: 1.8rem;
-  text-align: center;
-  width: 4.5rem;
-  border-radius: 0.2rem;
-  position: relative;
-  --newIconLeftMove: calc(100% - 5.5rem);
-  left: var(--newIconLeftMove);
-  top: 1rem;
-}
-.restaurantBox__list__info {
-  padding: 0.5rem 1rem;
-}
-.restaurantBox__list__info i {
-  float: right;
-  color: #ff79da;
-  font-size: 1.8rem;
-  margin: 0.5rem 0.8rem 0 0;
 }
 
 .restaurantDesc {
@@ -305,7 +409,6 @@ a {
 }
 .restaurantDesc__title i {
   font-size: 2rem;
-  color: #9356dc;
   margin: 0.8rem;
 }
 
@@ -353,70 +456,6 @@ a {
 .menu__button .button {
   padding: 0 3rem;
   color: white;
-}
-
-.meal {
-  background-color: #FFFFFF;
-  margin: 0.5rem 0;
-  border-radius: 1rem;
-  box-shadow: 1px 1px 2px 1px #e3e3e3;
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
-}
-.meal__desc {
-  padding: 0.7rem;
-  min-width: 100%;
-}
-.meal__desc h3 {
-  font-size: 1rem;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-.meal__desc p {
-  margin-top: 0.2rem;
-  font-size: 0.8rem;
-  max-width: 85%;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-.meal__desc span {
-  float: right;
-  margin-right: 0.5rem;
-  margin-top: -0.9rem;
-  font-size: 0.9rem;
-  font-weight: bold;
-}
-.meal__tick {
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform ease-in-out 0.4s;
-  width: 3.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #99E2D0;
-  border-top-right-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-}
-.meal__tick i {
-  display: none;
-  font-size: 1.5rem;
-  color: #FFFFFF;
-}
-.meal:hover > .meal__tick {
-  transform: scaleX(1);
-}
-.meal:hover > .meal__tick i {
-  display: initial;
-  animation: rolling 0.8s;
-}
-.meal:hover > .meal__desc {
-  --newWidth: calc(100% - 3.5rem);
-  min-width: var(--newWidth);
-  max-width: var(--newWidth);
 }
 
 /*# sourceMappingURL=style.css.map */
