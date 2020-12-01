@@ -19,8 +19,12 @@
         border-top-left-radius: 2rem;
         border-top-right-radius: 2rem;
 
-        & h1{
+        &__logo{
             font-size: 1.2rem;
+            font-family: 'shrikhand';
+            font-weight: 200;
+            margin-left: 0rem;
+            margin-bottom: 0rem;
         }
 
         & i{

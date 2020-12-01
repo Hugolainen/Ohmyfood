@@ -42,10 +42,6 @@
                 border-top-right-radius: 1rem;
 
                 object-fit: cover;
-
-                &.--withNewIcon{
-                    margin-top: -1.8rem;
-                }
             }
         }
 
@@ -74,4 +70,8 @@
             }
         }
     }
+}
+
+.withNewIcon{
+    margin-top: -1.8rem;
 }
