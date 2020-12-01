@@ -54,7 +54,6 @@ body {
 
 h1 {
   font-family: "shrikhand";
-  font-size: 2rem;
   font-weight: 200;
 }
 
@@ -300,6 +299,9 @@ a {
   background-color: #f0f0f0;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
+}
+.restaurantDesc__title h1 {
+  font-size: 1.2rem;
 }
 .restaurantDesc__title i {
   font-size: 2rem;
