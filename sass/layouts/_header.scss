@@ -10,11 +10,19 @@
         padding: 0.5rem;
     }
 
+    & a{
+        color: black;
+    }
+    
     & i{
-        align-self: center;
+        cursor: pointer;
         position: absolute;
         top: 0.8rem;
-        left: 1rem;
+        --leftDec: calc(50% - 200px);
+        left: var(--leftDec);
+        @media(max-width: 425px) {
+            left: 1rem;
+        }
         font-size: 1.5rem;
     }
 }

@@ -1,4 +1,4 @@
-@keyframes puff-in-top {
+@keyframes menuAppearence {
   0% {
     transform: translateY(10px);
     opacity: 0;
@@ -6,6 +6,42 @@
   100% {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+@keyframes rolling {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes buttonHovering {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    background-image: linear-gradient(#ae80e5, #9356dc);
+  }
+  100% {
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.35);
+    background-image: linear-gradient(#bc95e9, #a16be0);
+  }
+}
+@keyframes tutorialHovering {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    background-color: #f0f0f0;
+  }
+  100% {
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.35);
+    background-color: #f2eafb;
+  }
+}
+@keyframes loaderSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 *,
@@ -20,6 +56,8 @@ body {
   box-sizing: border-box;
   background-color: #FFFFFF;
   width: 100vw;
+  max-width: 425px;
+  margin: auto;
 }
 
 @font-face {
@@ -34,7 +72,6 @@ body {
 
 h1 {
   font-family: "shrikhand";
-  font-size: 2rem;
   font-weight: 200;
 }
 
@@ -62,10 +99,164 @@ a {
   border-radius: 3rem;
   border: 0;
   box-shadow: 0px 0px 6px 2px #c8c8c8;
-  text-shadow: 0px 0px 6px 2px #c8c8c8;
+  cursor: pointer;
+}
+.button:hover {
+  animation: buttonHovering 0.2s ease-in both;
 }
 .button a {
   color: white;
+}
+
+.restaurantBox {
+  background-color: #f0f0f0;
+  padding: 3rem 0;
+  margin-top: 2rem;
+}
+.restaurantBox__loader {
+  position: absolute;
+  top: 50rem;
+  left: 30%;
+  border: 1rem solid #99E2D0;
+  border-top: 1rem solid #9356dc;
+  border-radius: 50%;
+  width: 40vw;
+  height: 40vw;
+  animation: loaderSpin 0.8s ease-in-out 3;
+}
+.restaurantBox__list {
+  margin: 0 1rem;
+  list-style: none;
+}
+.restaurantBox__list li {
+  height: 15rem;
+  border-radius: 1rem;
+  background-color: #FFFFFF;
+  margin: 1rem 0 1rem 0;
+  cursor: pointer;
+  animation: menuAppearence 0.4s 2s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+}
+.restaurantBox__list li a {
+  color: black;
+}
+.restaurantBox__list li img {
+  --imgHeight: calc(100% - 4rem);
+  max-height: var(--imgHeight);
+  width: auto;
+  min-width: 100%;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  object-fit: cover;
+}
+.restaurantBox__list__newIcon {
+  background-color: #99E2D0;
+  color: #278870;
+  font-weight: bold;
+  line-height: 1.8rem;
+  text-align: center;
+  width: 4.5rem;
+  border-radius: 0.2rem;
+  position: relative;
+  --newIconLeftMove: calc(100% - 5.5rem);
+  left: var(--newIconLeftMove);
+  top: 1rem;
+}
+.restaurantBox__list__info {
+  padding: 0.5rem 1rem;
+}
+.restaurantBox__list__info i {
+  float: right;
+  font-size: 1.8rem;
+  margin: 0.5rem 0.8rem 0 0;
+}
+
+.withNewIcon {
+  margin-top: -1.8rem;
+}
+
+.meal {
+  background-color: #FFFFFF;
+  margin: 0.5rem 0;
+  border-radius: 1rem;
+  box-shadow: 1px 1px 2px 1px #e3e3e3;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.meal__desc {
+  padding: 0.7rem;
+  min-width: 100%;
+}
+.meal__desc h3 {
+  font-size: 1rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.meal__desc p {
+  margin-top: 0.2rem;
+  font-size: 0.8rem;
+  max-width: 85%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.meal__desc span {
+  float: right;
+  margin-right: 0.5rem;
+  margin-top: -0.9rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+.meal__tick {
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform ease-in-out 0.4s;
+  width: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #99E2D0;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+.meal__tick i {
+  display: none;
+  font-size: 1.5rem;
+  color: #FFFFFF;
+}
+.meal:hover > .meal__tick {
+  transform: scaleX(1);
+}
+.meal:hover > .meal__tick i {
+  display: initial;
+  animation: rolling 0.8s;
+}
+.meal:hover > .meal__desc {
+  --newWidth: calc(100% - 3.5rem);
+  min-width: var(--newWidth);
+  max-width: var(--newWidth);
+}
+
+.heart {
+  display: grid;
+  float: right;
+  cursor: pointer;
+}
+.heart:hover > .heart__fill {
+  transform: scale(1);
+}
+.heart__fill {
+  grid-column: 1;
+  grid-row: 1;
+  transform: scale(0);
+  transition: transform 500ms;
+  color: #9356dc;
+}
+.heart__border {
+  grid-column: 1;
+  grid-row: 1;
+  color: grey;
 }
 
 .header {
@@ -79,12 +270,21 @@ a {
 .header__logo {
   padding: 0.5rem;
 }
+.header a {
+  color: black;
+}
 .header i {
-  align-self: center;
+  cursor: pointer;
   position: absolute;
   top: 0.8rem;
-  left: 1rem;
+  --leftDec: calc(50% - 200px);
+  left: var(--leftDec);
   font-size: 1.5rem;
+}
+@media (max-width: 425px) {
+  .header i {
+    left: 1rem;
+  }
 }
 
 .footer {
@@ -107,6 +307,7 @@ a {
   margin-right: 0.3rem;
 }
 .footer__nav li a {
+  cursor: pointer;
   color: white;
 }
 .footer__nav li a:hover {
@@ -161,7 +362,10 @@ a {
   border-radius: 1rem;
   font-size: 0.95rem;
   font-weight: bold;
-  box-shadow: 1px 1px 6px 1px #c8c8c8;
+  box-shadow: 1px 1px 2px 1px #c8c8c8;
+}
+.tutorial__list li:hover {
+  animation: tutorialHovering 0.2s ease-in both;
 }
 .tutorial__list li span {
   background-color: #9356dc;
@@ -173,66 +377,12 @@ a {
   min-width: 1.5rem;
   margin-left: -0.7rem;
   font-size: 0.8rem;
-  font-weight: 0;
+  font-weight: 100;
 }
 .tutorial__list li i {
   color: #717171;
   font-size: 1.2rem;
   margin: 0 0.7rem;
-}
-
-.restaurantBox {
-  background-color: #f0f0f0;
-  padding: 3rem 0;
-  margin-top: 2rem;
-}
-.restaurantBox__list {
-  margin: 0 1rem;
-  list-style: none;
-}
-.restaurantBox__list li {
-  height: 15rem;
-  border-radius: 1rem;
-  background-color: #FFFFFF;
-  margin: 1rem 0 1rem 0;
-}
-.restaurantBox__list li img {
-  --imgHeight: calc(100% - 4rem);
-  max-height: var(--imgHeight);
-  width: auto;
-  min-width: 100%;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-  object-fit: cover;
-}
-.restaurantBox__list li img.--withNewIcon {
-  margin-top: -1.8rem;
-}
-.restaurantBox__list__newIcon {
-  background-color: #99E2D0;
-  color: #278870;
-  font-weight: bold;
-  line-height: 1.8rem;
-  text-align: center;
-  width: 4.5rem;
-  border-radius: 0.2rem;
-  position: relative;
-  --newIconLeftMove: calc(100% - 5.5rem);
-  left: var(--newIconLeftMove);
-  top: 1rem;
-}
-.restaurantBox__list__info {
-  padding: 0.5rem 1rem;
-}
-.restaurantBox__list__info i {
-  float: right;
-  color: #ff79da;
-  font-size: 1.8rem;
-  margin: 0.5rem 0.8rem 0 0;
-}
-
-.menuPageBody {
-  background-color: #f0f0f0;
 }
 
 .restaurantDesc {
@@ -254,14 +404,20 @@ a {
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
 }
+.restaurantDesc__title__logo {
+  font-size: 1.2rem;
+  font-family: "shrikhand";
+  font-weight: 200;
+  margin-left: 0rem;
+  margin-bottom: 0rem;
+}
 .restaurantDesc__title i {
   font-size: 2rem;
-  color: #9356dc;
   margin: 0.8rem;
-  float: right;
 }
 
 .menu {
+  background-color: #f0f0f0;
   margin-top: -1rem;
   padding-bottom: 1rem;
 }
@@ -269,13 +425,13 @@ a {
   list-style: none;
 }
 .menu__part--anim1 {
-  animation: puff-in-top 0.4s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+  animation: menuAppearence 0.4s cubic-bezier(0.47, 0, 0.745, 0.715) both;
 }
 .menu__part--anim2 {
-  animation: puff-in-top 0.4s 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+  animation: menuAppearence 0.4s 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) both;
 }
 .menu__part--anim3 {
-  animation: puff-in-top 0.4s 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+  animation: menuAppearence 0.4s 1s cubic-bezier(0.47, 0, 0.745, 0.715) both;
 }
 .menu__part__title {
   font-size: 1.2rem;
@@ -296,28 +452,6 @@ a {
 .menu__part__list {
   list-style: none;
   margin: 0 1rem;
-}
-.menu__part__list li {
-  background-color: #FFFFFF;
-  margin: 0.5rem 0;
-  border-radius: 1rem;
-  box-shadow: 1px 1px 2px 1px #e3e3e3;
-  padding: 0.7rem;
-}
-.menu__part__list li h3 {
-  font-size: 1rem;
-}
-.menu__part__list li p {
-  margin-top: 0.2rem;
-  font-size: 0.8rem;
-  max-width: 85%;
-}
-.menu__part__list li span {
-  float: right;
-  margin-right: 0.5rem;
-  margin-top: -0.9rem;
-  font-size: 0.9rem;
-  font-weight: bold;
 }
 .menu__button {
   padding: 2rem 0 3rem 0;

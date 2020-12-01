@@ -1,9 +1,4 @@
-.menuPageBody{
-    background-color: $color-primaryBackground;
-}
-
 .restaurantDesc{
-
     height: 20rem;
     max-height: 20rem;
     
@@ -17,7 +12,6 @@
     &__title{
         position: relative;
         bottom: 2rem;
-        
 
         line-height: 4rem;
         padding: 0.5rem 1.5rem;
@@ -25,16 +19,23 @@
         border-top-left-radius: 2rem;
         border-top-right-radius: 2rem;
 
+        &__logo{
+            font-size: 1.2rem;
+            font-family: 'shrikhand';
+            font-weight: 200;
+            margin-left: 0rem;
+            margin-bottom: 0rem;
+        }
+
         & i{
             font-size: 2rem;
-            color: $color-primary;
             margin: 0.8rem;
-            float: right;
         }
     }
 }
 
 .menu{
+    background-color: $color-primaryBackground;
     margin-top: -1rem;
     padding-bottom: 1rem;;
 
@@ -42,15 +43,15 @@
         list-style: none;
 
         &--anim1{
-            animation: puff-in-top 0.4s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+            animation: menuAppearence 0.4s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
         }
 
         &--anim2{
-            animation: puff-in-top 0.4s 0.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+            animation: menuAppearence 0.4s 0.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
         }
 
         &--anim3{
-            animation: puff-in-top 0.4s 0.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+            animation: menuAppearence 0.4s 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
         }
 
         &__title{
@@ -74,34 +75,6 @@
         &__list{
             list-style: none;
             margin: 0 1rem;
-
-            & li{
-                background-color: $color-secondaryBackground;
-                margin: 0.5rem 0;
-                border-radius: 1rem;
-                box-shadow: 1px 1px 2px 1px $color-tertiaryBackground;
-
-                padding: 0.7rem;
-
-                & h3{
-                    font-size: 1rem;
-                }
-
-                & p{
-                    margin-top: 0.2rem;
-                    font-size: 0.8rem;
-                    max-width: 85%;
-                }
-
-                & span{
-                    float: right;
-                    margin-right: 0.5rem;
-                    margin-top: -0.9rem;
-                    font-size: 0.9rem;
-                    font-weight: bold;
-
-                }
-            }
         }
     } 
     
@@ -115,4 +88,5 @@
         }
     }
 }
+
 
