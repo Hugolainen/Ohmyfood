@@ -10,8 +10,15 @@
         border: 1rem solid $color-tertiary; 
         border-top: 1rem solid $color-primary; 
         border-radius: 50%;
-        width: 40vw;
-        height: 40vw;
+
+        width: 10rem;
+        height: 10rem;
+
+        @media(max-width: 425px) {
+            width: 40vw;
+            height: 40vw;
+        }
+        
         animation: loaderSpin 0.8s ease-in-out 3;
     }
 
