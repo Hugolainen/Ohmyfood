@@ -6,8 +6,7 @@
     &__loader{
         position: absolute;
         top: 50rem;
-        --decLeft: calc(50%-5rem);
-        left: var(--decLeft);
+        left: 50%;
         border: 1rem solid $color-tertiary; 
         border-top: 1rem solid $color-primary; 
         border-radius: 50%;
