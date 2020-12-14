@@ -9,3 +9,4 @@ Objectives:
 * CSS pre-compiler SASS
 * CSS Animations
 * HTML navigation
+* From scratch
